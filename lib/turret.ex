@@ -146,7 +146,6 @@ defmodule Turret do
 
   defp on_target(state, dist) do
     IO.puts("[Turret] CEL #{round(dist)}cm  X=#{state.x} Y=#{state.y}")
-    # Przytrzymaj aktualną pozycję (odśwież PWM).
     PWM.set_angle(@pins.servo_x, state.x)
     PWM.set_angle(@pins.servo_y, state.y)
     state
